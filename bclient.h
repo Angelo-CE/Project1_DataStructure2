@@ -15,7 +15,7 @@
 
 class bclient {
 
-public:
+private:
 
     sockaddr_in client;
     socklen_t clientSize = sizeof(client);
@@ -24,9 +24,13 @@ public:
     char buffer[1024];
     int buffersize = 1024;
     int listener(int socket);
-    //void binder(int socket), waiter(int socket, sockaddr_in client,socklen_t Size);
+
+public:
+    void sender(), receive();
+
 
 };
+
 
 
 #endif //INC_1PROJECTTESTER_BCLIENT_H

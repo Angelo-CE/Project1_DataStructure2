@@ -1,0 +1,15 @@
+# ninja log v5
+234	2010	1649133234887941668	CMakeFiles/gui.dir/mainwindow.cpp.o	9951c9ef517aff65
+0	233	1649133233107905314	/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/gui_autogen/timestamp	3bdf32354d72806f
+233	2084	1649133234963943221	CMakeFiles/gui.dir/gui_autogen/mocs_compilation.cpp.o	c91f3651dfab2a67
+233	2024	1649133234903941996	CMakeFiles/gui.dir/main.cpp.o	a2a9df94ceb59349
+0	233	1649133233107905314	/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/gui_autogen/mocs_compilation.cpp	3bdf32354d72806f
+2084	2392	1649133235267949430	gui	8cca3eeeeda91d9f
+0	233	1649133233107905314	gui_autogen/mocs_compilation.cpp	3bdf32354d72806f
+0	233	1649133233107905314	gui_autogen/timestamp	3bdf32354d72806f
+4	48	1649136084084155243	gui_autogen/timestamp	3bdf32354d72806f
+4	48	1649136084084155243	gui_autogen/mocs_compilation.cpp	3bdf32354d72806f
+4	48	1649136084084155243	/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/gui_autogen/timestamp	3bdf32354d72806f
+4	48	1649136084084155243	/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/gui_autogen/mocs_compilation.cpp	3bdf32354d72806f
+49	1717	1649136085752179132	CMakeFiles/gui.dir/mainwindow.cpp.o	9951c9ef517aff65
+1717	2037	1649136086068183660	gui	8cca3eeeeda91d9f
