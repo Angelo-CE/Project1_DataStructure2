@@ -1,0 +1,8 @@
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/Project1-DataStructure2.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/build_server.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/Project1-DataStructure2_autogen_timestamp_deps.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/Project1-DataStructure2_autogen.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/build_server_autogen_timestamp_deps.dir
+/home/angelo/CLionProjects/Project1-DataStructure2/build-Project1-DataStructure2-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/build_server_autogen.dir

@@ -1,0 +1,5 @@
+TipoA TipoC TipoA TipoC TipoB TipoB 
+TipoB TipoD TipoB TipoA TipoC TipoB 
+TipoB TipoD TipoD TipoE TipoD TipoD 
+TipoA TipoA TipoE TipoD TipoC TipoE 
+TipoA TipoC TipoE TipoC TipoE TipoE 

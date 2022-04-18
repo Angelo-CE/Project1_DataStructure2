@@ -1,5 +1,0 @@
-/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
-/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
-/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/gui.dir
-/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/gui_autogen_timestamp_deps.dir
-/home/angelo/CLionProjects/Project1-DataStructure2/build-gui-Desktop_Qt_6_3_0_GCC_64bit-Debug/CMakeFiles/gui_autogen.dir
