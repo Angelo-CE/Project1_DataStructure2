@@ -11,7 +11,7 @@ public:
 
 
 
-private:
+
     //Estrutura de la carta
     card_struture(string i, int j){
         this->type = i;
@@ -19,6 +19,8 @@ private:
         this->active = true;
         this->playing = false;
     }
+
+   // private:
         //Se accede a carta para obtener el estado de la carta con las siguientes funciones
     void complete(){
         this->active = false;

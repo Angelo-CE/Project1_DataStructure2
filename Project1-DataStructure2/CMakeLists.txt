@@ -19,7 +19,8 @@ set(PROJECT_SOURCES
         gui.cpp
         gui.h
         gui.ui
-        card_struture.cpp card_struture.h cliente.cpp cliente.h
+        card_struture.cpp card_struture.h cliente.cpp cliente.h dynamic_matrix.cpp dynamic_matrix.h
+        paginator.cpp paginator.h
 )
 qt_add_executable(build_server server.cpp)
 
