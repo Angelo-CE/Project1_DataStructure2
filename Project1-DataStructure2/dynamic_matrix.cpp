@@ -65,7 +65,7 @@ int matrix[5][6];
                 A +=1;
                 i -= 1;
             }
-            if(randomType == "G" and G < 2){
+            if(randomType == "G" and G < 6){
                 board.push_back("G");
                 A +=1;
                 i -= 1;

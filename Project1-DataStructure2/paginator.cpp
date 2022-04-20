@@ -84,13 +84,7 @@ public:
     string compare(string card){
         if (this->count%2 == 0){
             if(this->firstCard == card){
-                if(card == "TipoA"){
-                    return "5";
-                }if(card == "TipoB"){
-                    return "3";
-                }else{
                     return "1";
-                }
             }
         }
         return "0";
