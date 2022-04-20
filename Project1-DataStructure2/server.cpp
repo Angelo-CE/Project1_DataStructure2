@@ -5,6 +5,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
+#include <paginator.cpp>
 
 
 using namespace std;
@@ -20,7 +21,7 @@ int listener(int listening){
 
 }
 
-int build_server(){
+int build_server(paginator matrix){
     // Se crea el socket
     int server = socket(AF_INET, SOCK_STREAM, 0);
     listener(server);
@@ -76,18 +77,23 @@ int build_server(){
 
         string received = string(buffer, 0, bytesReceived);
 
+        // Echo message back to client
+        string imgType = matrix.get_card(stoi(received));
+        string points = matrix.compare(imgType);
+        string response = imgType + " " + points + " ";
+        send(clientSocket, response.c_str(), response.size() + 1, 0);
        // send(client_socket, rese.c_str(), res.size() + 1, 0);
     }
 
     // Close the socket
     close(clientSocket);
-    build_server();
+    build_server(matrix);
 
     return 0;
 };
 
 int main(){
-    //matrix paginator matrix;
-    build_server();
+    paginator matrix;
+    build_server(matrix);
 
 }

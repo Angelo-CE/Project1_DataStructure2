@@ -33,27 +33,27 @@ public:
 
     string build_client(int num) {
 
-        //static int r[2];
+
         //Create socket
         listener();
-        //Create a hint structure for the server we're connecting with
+
         hint.sin_family = AF_INET;
         hint.sin_port = htons(port);
         inet_pton(AF_INET, ipAdress.c_str(), &hint.sin_addr);
-        //Se creac la conexion
+        //Se crea la conexion
         int connect_result = connect(sock, (sockaddr*)&hint, sizeof(hint));
         if (connect_result == -1) {
             return error;
         }
 
-        /*
+
         string user = to_string(num);
         //While loop:
         while(true) {
             //Envia al servidor
                 int send_res = send(sock, user.c_str(), user.size() + 1, 0);
                 if (send_res == -1) {
-                    cout << "Could not send to server! Whoops! /r/n";
+                    cout << "No se envio nada! /r/n";
                 continue;}
 
             //Espera la respuesta del servidor
@@ -63,12 +63,12 @@ public:
                 cout << "There was a problem getting response from server/r/n";
             } else {
                 //Muestra la respuesta en consola
-                string serverResponse = string(buffer, 0,bytes_res);
+                string server_res = string(buffer, 0,bytes_res);
                 //Se cierra el cliente para que no se haga un bucle infinito
                 close(sock);
-                return serverResponse;
+                return server_res;
             }
-        }*/
+        }
         //se cierra corretamente
         close(sock);
         return "";
