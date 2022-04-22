@@ -7,7 +7,18 @@
 #include <string>
 #include <paginator.cpp>
 
-
+/**
+ * Instituto Tecnologico de Costa Rica
+ * Area de Ingenieria en Computadores
+ *
+ * Lenguaje: C++.
+ * Clase bclient
+ * @author Angelo Ceciliano Ortega.
+ * @version 1.0.
+ *
+ * Descripcion: Se encargar de enviar, recibir y evaluar las cartas y puntaje al cliente
+ * a traves de un conexion tcp.
+ */
 using namespace std;
 
 int port = 54000;
@@ -63,7 +74,7 @@ int build_server(paginator matrix){
     while (true) {
         memset(buffer, 0, 4096);
 
-        // Wait for client to send data
+        // Espera lo resibido del cliente
         int bytesReceived = recv(clientSocket, buffer, 4096, 0);
         if (bytesReceived == -1) {
             cerr << "Error in recv(). Quitting" << endl;
@@ -77,12 +88,12 @@ int build_server(paginator matrix){
 
         string received = string(buffer, 0, bytesReceived);
 
-        // Echo message back to client
-        string imgType = matrix.get_card(stoi(received));
-        string points = matrix.compare(imgType);
-        string response = imgType + " " + points + " ";
+        // Se evalua el dato y se envia la respuesta
+        string card = matrix.get_card(stoi(received));
+        string points = matrix.compare(card);
+        string response = card + " " + points + " ";
         send(clientSocket, response.c_str(), response.size() + 1, 0);
-       // send(client_socket, rese.c_str(), res.size() + 1, 0);
+
     }
 
     // Close the socket

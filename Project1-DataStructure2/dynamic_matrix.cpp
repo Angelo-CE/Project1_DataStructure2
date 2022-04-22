@@ -10,24 +10,29 @@
 #include <card_struture.cpp>
 using namespace std;
 
+/**
+ * Instituto Tecnologico de Costa Rica
+ * Area de Ingenieria en Computadores
+ *
+ * Lenguaje: C++.
+ * Clase dynamicmatrix
+ * @author Angelo Ceciliano Ortega.
+ * @version 1.0.
+ *
+ * Descripcion: Crea la matrix con los id's al azar.
+ */
 class dynamicmatrix
 {
 
 public:
 vector<int> cards_in_mem;
-
-//private:
-int **ptr_mtx = nullptr;
-int ** line_2;
 int matrix[5][6];
-
-
+/**
+ * Se crea el tablero y contiene la lista de la cartas,Aca se generan las cartas de contendra la matrix,
+ */
 
    void create_board(){
-       //Se crea el tablero y contiene la lista de la cartas
-       //Aca se generan las cartas de contendra la matrix, como
-       // la matrix es [5][6], es decir 30 casilla, se debera repartir en pares
-       // entonces para incluir a cada tipo se meten 4 cartas y uno de 2, asi daran 30 cartas en total.
+
         int A = 0,B = 0,C = 0,D = 0, E = 0, F = 0, G = 0;
         int i = 30;
         vector<string> board;
@@ -70,31 +75,14 @@ int matrix[5][6];
                 A +=1;
                 i -= 1;
             }
-
-
         }
         write_in_matrix();
         fill_matrix(board);
         }
 
-/*
-   string fill_matrix(int num_lines , int num_colum, string num){
-    ifstream file("datos.txt");
-    ptr_mtx = (int**) malloc(1024*100);
-
-    for(int i = 0; i < num_lines; i++){
-        ptr_mtx[i] = (int*) malloc(1024*100);
-    }
-
-    for(int i=0; i<num_lines;i++){
-        for(int j = 0; j< num_colum; j++){
-            getline(file,line_2);
-            *(*(ptr_mtx+i)+j) = stoi(line_2);
-        }
-
-    }
-
-    }*/
+   /**
+    * Se generan los numeros en la matrix
+    */
    void write_in_matrix(){
        int count = 1;
        for(int i=0; i<5; i++){
@@ -104,12 +92,12 @@ int matrix[5][6];
            }
        }
    }
-
+   /**
+    * Escribe el contenido de tabla en un .txt para facilitar su manejo
+    * @param types
+    */
    void fill_matrix(vector<string> types) {
-       //int count = 0;
-       // aca se escribe el contenido de tabla
-       //en un .txt para facilitar su manejo
-       //
+
        ofstream file;
        file.open("matrix.txt");
        for (int i = 0; i < 5; i++) {
@@ -119,15 +107,18 @@ int matrix[5][6];
                file << "\n";
            }
            for (int j = 0, r = 0; j < 6; j++, r++) {
-               file << types[r] << " ";
-               //count++;
+               file << types[r] << " ";            
            }
        }
        file.close();
    }
+   /**
+    * Desde aca se accede a la matrix.txt para obtener cada carta por separado
+    * @param i, j posicion de la matrix
+    * @return return el tipo de carta.
+    */
    string acces_matrix(int i, int j){
-       //Desde aca se accede a la matrix.txt
-       // para obtener cada carta por separado
+       //
        //
        string word, line;
        int select_line = i + 1;
@@ -147,7 +138,11 @@ int matrix[5][6];
        }
        return word;
    }
-
+   /**
+    * saca la locacion de
+    * @param card_num, FoS se refiere a la posicion a buscar
+    * @return posicion de i o j.
+    */
    int card_location(int card_num, bool FoS) {
        for (int i = 0; i < 5; i++) {
            for (int j = 0; j < 6; j++) {
@@ -162,10 +157,14 @@ int matrix[5][6];
        }
        return 0;
    }
-
+   /**
+    * Allar la carta en memoria
+    * @param element
+    * @return resultado de la busqueda
+    */
    bool container(const int & element)
    {
-       // Allar la carta en memoria
+       //
        bool result = false;
        for (auto & x : this->cards_in_mem)
        {
@@ -177,6 +176,11 @@ int matrix[5][6];
        }
        return result;
    }
+
+   /**
+    * Genera una carta random
+    * @return carta ramdon
+    */
 
    card_struture random_card(){
        int i, j;

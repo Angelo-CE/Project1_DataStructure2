@@ -6,9 +6,19 @@
 #include <cstring>
 
 using namespace std;
-
+/**
+ * Instituto Tecnologico de Costa Rica
+ * Area de Ingenieria en Computadores
+ *
+ * Lenguaje: C++.
+ * Clase bclient
+ * @author Angelo Ceciliano Ortega.
+ * @version 1.0.
+ *
+ * Descripcion: Se encargar de enviar y recibir las cartas al server
+ * a traves de un conexion tcp.
+ */
 class bclient {
-public:
 
 public:
     //Creacion del socket
@@ -46,11 +56,12 @@ public:
             return error;
         }
 
-
+        // Se inicia con el numero de boton
+        // este sea hace strng y se envia al server
         string user = to_string(num);
         //While loop:
         while(true) {
-            //Envia al servidor
+            //Envia al servidor el numero de la carta
                 int send_res = send(sock, user.c_str(), user.size() + 1, 0);
                 if (send_res == -1) {
                     cout << "No se envio nada! /r/n";

@@ -2,34 +2,30 @@
 #include <string>
 using namespace std;
 
+/**
+ * Instituto Tecnologico de Costa Rica
+ * Area de Ingenieria en Computadores
+ *
+ * Lenguaje: C++.
+ * Clase card_struture
+ * @author Angelo Ceciliano Ortega.
+ * @version 1.0.
+ *
+ * Descripcion: Se encargar de conterner los datos de carta y de construirlo.
+ */
 class card_struture{
 public:
     string type;
     int num;
-    bool active;
     bool playing;
-
-
-
-
-    //Estrutura de la carta
     card_struture(string i, int j){
         this->type = i;
         this->num = j;
-        this->active = true;
         this->playing = false;
     }
-
-   // private:
-        //Se accede a carta para obtener el estado de la carta con las siguientes funciones
-    void complete(){
-        this->active = false;
-    }
-
     void card_play(){
         this->playing = true;
     }
-
     void card_out(){
         this->playing = false;
     }
