@@ -27,6 +27,9 @@ public:
 
     QPushButton *neutral;
     QPushButton *press= neutral;
+    QPushButton *press_1 = neutral;
+    QPushButton *press_2 = neutral;
+
 
 vector<string> acces_id(string text);
 //void button_image(QPushButton* button, string id);
