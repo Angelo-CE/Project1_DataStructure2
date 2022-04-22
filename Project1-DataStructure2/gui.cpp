@@ -19,6 +19,9 @@ gui::gui(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::gui)
 {
+
+
+
     ui->setupUi(this);
     ui->pushButton->setIcon(
                 QIcon(d_default));
@@ -78,6 +81,7 @@ gui::gui(QWidget *parent)
                 QIcon(d_default));
    ui->pushButton_29->setIcon(QIcon(d_default));
    ui->pushButton_30->setIcon(QIcon(d_default));
+   ui->label_2->setText(QString::number(this->pts));
 }
 
 gui::~gui()
@@ -975,10 +979,17 @@ void gui::on_pushButton_30_clicked()
           delay();
           sleep(1);
 
+          if(commands[1] == "1" or "0"){
+
+          }
+
+
           if(commands[1] == "x"){
               this->press = ui->pushButton_30;
               ui->pushButton_30->setIcon(QIcon(d_default));
+
           }else if(commands[1]== "1" and press != ui->pushButton_30){
+              //int points = stoi(commands[1]);
               ui->pushButton_30->hide();
              this->press->hide();
              this->press = neutral;
@@ -996,4 +1007,10 @@ void gui::on_pushButton_30_clicked()
 
 
 
+
+
+void gui::on_pushButton_31_clicked()
+{
+
+}
 
