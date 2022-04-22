@@ -19,9 +19,6 @@ gui::gui(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::gui)
 {
-
-
-
     ui->setupUi(this);
     ui->pushButton->setIcon(
                 QIcon(d_default));
@@ -81,7 +78,6 @@ gui::gui(QWidget *parent)
                 QIcon(d_default));
    ui->pushButton_29->setIcon(QIcon(d_default));
    ui->pushButton_30->setIcon(QIcon(d_default));
-   ui->label_2->setText(QString::number(this->pts));
 }
 
 gui::~gui()
@@ -760,7 +756,7 @@ void gui::on_pushButton_23_clicked()
          vector<string> commands = this->acces_id(received);
           for(int i=0; i < 8 ; i++){
               if(commands[0] == cards[i]){
-                  ui->pushButton_22->setIcon(QIcon(direction_cards[i]));
+                  ui->pushButton_23->setIcon(QIcon(direction_cards[i]));
               }
           }
           delay();
@@ -770,7 +766,7 @@ void gui::on_pushButton_23_clicked()
               this->press = ui->pushButton_23;
               ui->pushButton_23->setIcon(QIcon(d_default));
           }else if(commands[1]== "1" and press != ui->pushButton_23){
-              ui->pushButton_22->hide();
+              ui->pushButton_23->hide();
              this->press->hide();
              this->press = neutral;
              this->pts = stoi(commands[1]);
@@ -863,7 +859,7 @@ void gui::on_pushButton_26_clicked()
               this->press = ui->pushButton_26;
               ui->pushButton_26->setIcon(QIcon(d_default));
           }else if(commands[1]== "1" and press != ui->pushButton_26){
-              ui->pushButton->hide();
+              ui->pushButton_26->hide();
              this->press->hide();
              this->press = neutral;
              this->pts = stoi(commands[1]);
@@ -923,7 +919,7 @@ void gui::on_pushButton_28_clicked()
               this->press = ui->pushButton;
               ui->pushButton->setIcon(QIcon(d_default));
           }else if(commands[1]== "1" and press != ui->pushButton_28){
-              ui->pushButton->hide();
+              ui->pushButton_28->hide();
              this->press->hide();
              this->press = neutral;
              this->pts = stoi(commands[1]);
@@ -980,7 +976,7 @@ void gui::on_pushButton_30_clicked()
           sleep(1);
 
           if(commands[1] == "1" or "0"){
-
+               int points = stoi(commands[1]);
           }
 
 
@@ -989,7 +985,7 @@ void gui::on_pushButton_30_clicked()
               ui->pushButton_30->setIcon(QIcon(d_default));
 
           }else if(commands[1]== "1" and press != ui->pushButton_30){
-              //int points = stoi(commands[1]);
+
               ui->pushButton_30->hide();
              this->press->hide();
              this->press = neutral;
@@ -1009,8 +1005,4 @@ void gui::on_pushButton_30_clicked()
 
 
 
-void gui::on_pushButton_31_clicked()
-{
-
-}
 
