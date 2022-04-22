@@ -16,30 +16,38 @@
  */
 class paginator
 {
-
-
 public:
     dynamicmatrix matrix;
     int count = 0;
+    int pageHit = 0, pageFault = 0;
     string firstCard;
-
-   card_struture c1 = card_struture("", 0);
-   card_struture c2 = card_struture("", 0);
-   card_struture c3 = card_struture("", 0);
-   card_struture c4 = card_struture("", 0);
-   card_struture c5 = card_struture("", 0);
-   card_struture c6 = card_struture("", 0);
-   card_struture c7 = card_struture("", 0);
-   card_struture c8 = card_struture("", 0);
-   card_struture c9 = card_struture("", 0);
-   card_struture c10 = card_struture("", 0);
-   card_struture array_cards[10] = {c1,c2,c3,c4,c5,c6,c7,c8,c9,c10};
+    card_struture c1 = card_struture("", 0);
+    card_struture c2 = card_struture("", 0);
+    card_struture c3 = card_struture("", 0);
+    card_struture c4 = card_struture("", 0);
+    card_struture array_page[4] = {c1,c2,c3,c4};
   //constructor
   paginator(){
         this->matrix.create_board();
         this->shuffle();
+        this->pageFault = pageFault;
+        this->pageHit = pageHit;
         count = 0;
     }
+
+
+  /**
+   * Este metodo mostrara la memoria.
+   */
+  void getUsedMemory(){
+         int id = getpid();
+         string string("pmap ");
+         string.append(to_string(id));
+         string.append(" | tail -n 1 | awk '/[0-9]K/{print $2}'");
+         char const *pchar = string.c_str();
+         cout << id << endl;
+         cout << system(pchar) << endl;
+     }
   /**
    * Este metodo da la carta solicitada.
    * @param card_num
@@ -58,16 +66,10 @@ public:
      */
     void shuffle(){
         this->matrix.cards_in_mem.clear();
-        this->c1 = this->matrix.random_card();
-        this->c2 = this->matrix.random_card();
-        this->c3 = this->matrix.random_card();
-        this->c4 = this->matrix.random_card();
-        this->c5 = this->matrix.random_card();
-        this->c6 = this->matrix.random_card();
-        this->c7 = this->matrix.random_card();
-        this->c8 = this->matrix.random_card();
-        this->c9 = this->matrix.random_card();
-        this->c10 = this->matrix.random_card();
+        for(int i=0; i <4; i++){
+            this->array_page[i] = this->matrix.random_card();
+        }
+
     }
     /**
      *Busca si la carta esta en el array de cartas de referencia
@@ -75,15 +77,16 @@ public:
      * @return retorna la carta solicitada o realiza un swap
      */
     card_struture find_card(int card_num){
-        for(int i = 0; i < 11;i++){
-            if(card_num == array_cards[i].num){
-                this->array_cards[i].card_play();
-                return array_cards[i];
+        this->getUsedMemory();
+        for(int i = 0; i < 4;i++){
+            if(card_num == array_page[i].num){
+                this->array_page[i].card_play();
+                return array_page[i];
+               pageHit += 1;
             }
         }
             return this->swap(card_num);
     }
-
     /**
      * Cambia la carta por la solicitada
      * @param card_number
@@ -94,6 +97,7 @@ public:
         int location_j = this->matrix.card_location(card_number, false);
         string new_card= this->matrix.acces_matrix(location_i, location_j);
 
+        pageFault += 1;
         if(this->c1.playing == false){
             this->c1 = card_struture(new_card, card_number);
             this->c1.card_play();
@@ -102,6 +106,15 @@ public:
             this->c2 = card_struture(new_card, card_number);
             this->c2.card_play();
             return c2;
+        }
+        if(this->c3.playing == false){
+            this->c3 = card_struture(new_card, card_number);
+            this->c3.card_play();
+            return c3;
+        }else{
+            this->c4 = card_struture(new_card, card_number);
+            this->c4.card_play();
+            return c4;
         }
     }
    /**
@@ -124,16 +137,10 @@ public:
         /**
          * Se reinician las cartas para que sean jugables nuevamente.
          */
-        this->c1.card_out();
-        this->c2.card_out();      
-        this->c3.card_out();
-        this->c4.card_out();
-        this->c5.card_out();
-        this->c6.card_out();
-        this->c7.card_out();
-        this->c8.card_out();
-        this->c9.card_out();
-        this->c10.card_out();
+        for(int i = 0; i<4; i++){
+            this->array_page[i].card_out();
+        }
+
     }
 };
 

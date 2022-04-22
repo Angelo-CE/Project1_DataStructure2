@@ -87,7 +87,10 @@ int build_server(paginator matrix){
         }
 
         string received = string(buffer, 0, bytesReceived);
+       int pageFault = matrix.pageFault;
+       int pageHit = matrix.pageHit;
 
+        cout<<"Page fault:"+ to_string(pageFault)+"Page hit:"+ to_string(pageHit)<<endl;
         // Se evalua el dato y se envia la respuesta
         string card = matrix.get_card(stoi(received));
         string points = matrix.compare(card);
